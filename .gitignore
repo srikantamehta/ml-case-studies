@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.DS_Store
 securebank/data_sources/
 build/
 develop-eggs/
