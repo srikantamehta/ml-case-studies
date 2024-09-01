@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+securebank/data_sources/
 build/
 develop-eggs/
 dist/
