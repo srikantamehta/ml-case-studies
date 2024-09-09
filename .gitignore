@@ -10,6 +10,8 @@ __pycache__/
 .Python
 .DS_Store
 securebank/data_sources/
+securebank/processed_data/
+processed_data/
 build/
 develop-eggs/
 dist/
@@ -27,6 +29,11 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# Additional
+.parquet
+test*
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
