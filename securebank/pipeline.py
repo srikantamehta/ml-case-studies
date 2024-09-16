@@ -22,7 +22,7 @@ class Pipeline:
         """
         Loads a model, scaler, and target encoder from a catalog of pre-trained models in storage/models/artifacts/.
         """
-        base_model_dir = 'storage/models/artifacts/'
+        base_model_dir = os.path.abspath('storage/models/artifacts/')
         model_path = os.path.join(base_model_dir, version, 'model.pkl')
         
         if os.path.exists(model_path):
