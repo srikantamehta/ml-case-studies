@@ -9,6 +9,9 @@ class Feature_Extractor:
     def __init__(self):
         self.transformed_data = {}
         self.version = "1.0"
+        # Define numeric and categorical features
+        self.numeric_features = ['amt', 'merch_lat', 'merch_long', 'hour_sin', 'hour_cos', 'day_sin', 'day_cos', 'month_sin', 'month_cos']
+        self.categorical_features = ['category', 'merchant']
 
     def extract(self, training_dataset_filename: str, testing_dataset_filename: str):
         """
@@ -20,76 +23,84 @@ class Feature_Extractor:
         
         return self.training_dataset, self.testing_dataset
 
-    def transform(self, training_dataset, test_dataset):
+    def transform(self, training_dataset=None, test_dataset=None, inference_data=None):
         """
         Transforms the datasets into features useful for training the model, including time-based features, 
-        numeric scaling, and target encoding.
+        numeric scaling, and target encoding. For inference data, feature engineering is applied but scaling and 
+        encoding is skipped (left for prediction).
+        
+        Args:
+            training_dataset (pd.DataFrame): The training dataset.
+            test_dataset (pd.DataFrame): The test dataset.
+            inference_data (pd.DataFrame): A single data point for inference.
+        
+        Returns:
+            Depending on the input type (training, testing, or inference):
+            - Transformed training and test datasets with scaling and encoding.
+            - Feature engineered but non-scaled, non-encoded inference data.
         """
-        # Separate target column (is_fraud)
-        y_train = training_dataset['is_fraud']
-        y_test = test_dataset['is_fraud']
+        if inference_data is not None:
+            # Handle the inference case, returning unscaled/unencoded features
+            self._add_time_features(inference_data)
+            return inference_data  # Return the feature engineered inference data without scaling or encoding
 
-        # Convert 'trans_date_trans_time' to datetime format
-        training_dataset['trans_date_trans_time'] = pd.to_datetime(training_dataset['trans_date_trans_time'])
-        test_dataset['trans_date_trans_time'] = pd.to_datetime(test_dataset['trans_date_trans_time'])
+        else:
+            # Handle training and test datasets (with labels)
+            self._add_time_features(training_dataset)
+            if test_dataset is not None:
+                self._add_time_features(test_dataset)
 
-        # Add time-based features to the training and testing datasets
-        for dataset in [training_dataset, test_dataset]:
-            dataset['hour_of_day'] = dataset['trans_date_trans_time'].dt.hour
-            dataset['day_of_week'] = dataset['trans_date_trans_time'].dt.dayofweek
-            dataset['month'] = dataset['trans_date_trans_time'].dt.month
-            dataset['time_since_last_transaction'] = dataset.sort_values(['cc_num', 'trans_date_trans_time']) \
-                .groupby('cc_num')['trans_date_trans_time'].diff().dt.total_seconds().fillna(0)
+            # Scaling the numerical features
+            numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
+            X_train_numeric = numeric_transformer.fit_transform(training_dataset[self.numeric_features])
+            X_test_numeric = numeric_transformer.transform(test_dataset[self.numeric_features]) if test_dataset is not None else None
 
-            # Cyclical encoding for hour_of_day, day_of_week, and month
-            dataset['hour_sin'] = np.sin(2 * np.pi * dataset['hour_of_day'] / 24)
-            dataset['hour_cos'] = np.cos(2 * np.pi * dataset['hour_of_day'] / 24)
-            dataset['day_sin'] = np.sin(2 * np.pi * dataset['day_of_week'] / 7)
-            dataset['day_cos'] = np.cos(2 * np.pi * dataset['day_of_week'] / 7)
-            dataset['month_sin'] = np.sin(2 * np.pi * dataset['month'] / 12)
-            dataset['month_cos'] = np.cos(2 * np.pi * dataset['month'] / 12)
+            # Target encoding for categorical features
+            target_encoder = TargetEncoder(random_state=42)
+            X_train_encoded = target_encoder.fit_transform(training_dataset[self.categorical_features], training_dataset['is_fraud'])
+            X_test_encoded = target_encoder.transform(test_dataset[self.categorical_features]) if test_dataset is not None else None
 
-        # Define numerical and categorical columns
-        numeric_features = ['amt', 'merch_lat', 'merch_long', 'time_since_last_transaction', 
-                            'hour_sin', 'hour_cos', 'day_sin', 'day_cos', 'month_sin', 'month_cos']
-        categorical_features = ['category', 'merchant']
+            # Convert numeric and categorical arrays back into DataFrames
+            X_train_numeric = pd.DataFrame(X_train_numeric, columns=self.numeric_features, index=training_dataset.index)
+            X_test_numeric = pd.DataFrame(X_test_numeric, columns=self.numeric_features, index=test_dataset.index) if test_dataset is not None else None
+            X_train_encoded = pd.DataFrame(X_train_encoded, columns=self.categorical_features, index=training_dataset.index)
+            X_test_encoded = pd.DataFrame(X_test_encoded, columns=self.categorical_features, index=test_dataset.index) if test_dataset is not None else None
 
-        # Scaling the numerical features (including 'time_since_last_transaction')
-        numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
+            # Combine numeric and categorical features
+            X_train = pd.concat([X_train_numeric, X_train_encoded], axis=1)
+            X_test = pd.concat([X_test_numeric, X_test_encoded], axis=1) if test_dataset is not None else None
 
-        # Apply the numeric transformation to the training and testing datasets
-        X_train_numeric = numeric_transformer.fit_transform(training_dataset[numeric_features])
-        X_test_numeric = numeric_transformer.transform(test_dataset[numeric_features])
+            # Store the transformed datasets along with target labels
+            self.transformed_data = {
+                'X_train': X_train,
+                'X_test': X_test,
+                'y_train': training_dataset['is_fraud'],
+                'y_test': test_dataset['is_fraud'] if test_dataset is not None else None
+            }
 
-        # Target Encoder for categorical features
-        target_encoder = TargetEncoder()
+            # Return transformed datasets, scaler, and encoder
+            return X_train, X_test, training_dataset['is_fraud'], test_dataset['is_fraud'], numeric_transformer, target_encoder
 
-        # Apply target encoding to the training and testing datasets
-        X_train_encoded = target_encoder.fit_transform(training_dataset[categorical_features], training_dataset['is_fraud'])
-        X_test_encoded = target_encoder.transform(test_dataset[categorical_features])
+    def _add_time_features(self, dataset):
+        """
+        Adds time-based features (hour_of_day, day_of_week, month) and cyclical encoding for those features.
+        
+        Args:
+            dataset (pd.DataFrame): The dataset to which the time-based features will be added.
+        """
+        dataset['trans_date_trans_time'] = pd.to_datetime(dataset['trans_date_trans_time'])
+        dataset['hour_of_day'] = dataset['trans_date_trans_time'].dt.hour
+        dataset['day_of_week'] = dataset['trans_date_trans_time'].dt.dayofweek
+        dataset['month'] = dataset['trans_date_trans_time'].dt.month
 
-        # Convert the encoded arrays back into DataFrames
-        X_train_encoded = pd.DataFrame(X_train_encoded, columns=categorical_features, index=training_dataset.index)
-        X_test_encoded = pd.DataFrame(X_test_encoded, columns=categorical_features, index=test_dataset.index)
+        # Cyclical encoding for hour_of_day, day_of_week, and month
+        dataset['hour_sin'] = np.sin(2 * np.pi * dataset['hour_of_day'] / 24)
+        dataset['hour_cos'] = np.cos(2 * np.pi * dataset['hour_of_day'] / 24)
+        dataset['day_sin'] = np.sin(2 * np.pi * dataset['day_of_week'] / 7)
+        dataset['day_cos'] = np.cos(2 * np.pi * dataset['day_of_week'] / 7)
+        dataset['month_sin'] = np.sin(2 * np.pi * dataset['month'] / 12)
+        dataset['month_cos'] = np.cos(2 * np.pi * dataset['month'] / 12)
 
-        # Convert numeric arrays back into DataFrames
-        X_train_numeric = pd.DataFrame(X_train_numeric, columns=numeric_features, index=training_dataset.index)
-        X_test_numeric = pd.DataFrame(X_test_numeric, columns=numeric_features, index=test_dataset.index)
-
-        # Combine encoded categorical and scaled numerical features
-        X_train = pd.concat([X_train_numeric, X_train_encoded], axis=1)
-        X_test = pd.concat([X_test_numeric, X_test_encoded], axis=1)
-
-        # Store the transformed datasets along with target labels
-        self.transformed_data = {
-            'X_train': X_train,
-            'X_test': X_test,
-            'y_train': y_train,
-            'y_test': y_test
-        }
-
-        return X_train, X_test, y_train, y_test
-    
     def describe(self, *args, **kwargs):
         """
         Computes and returns the significant quality metrics of the transformed dataset. 
@@ -116,3 +127,4 @@ class Feature_Extractor:
 
         # Return the dataset description
         return dataset_description
+

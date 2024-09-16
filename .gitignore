@@ -32,7 +32,8 @@ MANIFEST
 
 # Additional
 .parquet
-test*
+test_*
+storage/
 
 
 # PyInstaller

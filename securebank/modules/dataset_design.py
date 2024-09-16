@@ -41,6 +41,7 @@ class Dataset_Designer:
         Computes and returns key metrics of the partitioned data, such as class distribution, 
         dataset size, and feature count.
         """
+        
         # Retrieve partitioned data
         train_set = self.partitioned_data.get('train_set', pd.DataFrame())
         test_set = self.partitioned_data.get('test_set', pd.DataFrame())
