@@ -251,3 +251,80 @@ Online metrics are collected when the system is deployed and handling live data.
 These online metrics help ensure that the fraud detection system continues to perform optimally in real-world scenarios, and they provide transparency for auditing and performance tracking.
 
 
+## Analysis of System Parameters and Configurations
+
+### Feature Selection
+ In this system, a combination of numerical, categorical, and time-based features is used to capture various aspects of transaction behavior as described in detail above. 
+
+ During development several other features and feature engineering techniques were tried but eventually dropped since they did not improve performance on validation sets. These methods included:
+ - Storing average transaction amount and average time between transactions for existing customers to compute the difference from this average for each subsequent transaction. This was difficult to implement to avoid data leakage during training and also because many transactions were by new customers.
+ - Using feature decomposition techniques like PCA. This led to underfitting on the training and test set.
+ - Using oversampling techniques like SMOTE. 
+ - Using feature selection techniques like recursive feature elimination. This significantly increase model training time and did not significantly impact model performance since the total feature set was already fairly small.
+
+### Dataset Design
+The dataset is designed to ensure that the model generalizes well to unseen data while avoiding data leakage. The data pipeline begins by extracting raw data from CSV, Parquet, and JSON files for customer, transaction, and fraud data. 
+
+1. **Raw Data Handling**: The `Raw_Data_Handler` module is responsible for reading and merging the customer, transaction, and fraud data. Missing values are handled with imputation strategies for fields like `category` and `unix_time`. The merged dataset is then sorted by transaction time to ensure chronological integrity.
+
+2. **Train-Test Split**: The dataset is split into training and test sets using a time-based approach, where transactions in the training set occur before those in the test set. This helps simulate a real-world scenario where the model predicts future transactions based on past data. By default, 20% of the dataset is used for testing. The `Dataset_Designer` module manages this process, ensuring that data leakage is avoided and the temporal order of transactions is maintained.
+
+3. **Data Partitioning**: Once the dataset is split, the system computes important statistics such as class distribution (fraud vs. non-fraud), dataset size, and feature count. This ensures that the system is aware of any imbalances in the dataset and can handle them accordingly during model training and evaluation.
+
+### Model Evaluation and Selection
+
+The system supports the training and evaluation of several machine learning models, including Random Forest, Bagging Classifier, Extra Trees, and a Multilayer Perceptron (MLP). Each model is evaluated based on its performance on precision, recall, and F1 score using custom thresholds.
+
+1. **Model Training**: The training process for each model begins with hyperparameter tuning, which is initially performed using time-sensitive cross-validation. This ensures that the models are trained in a manner that respects the temporal nature of the data, simulating how the model would perform on future unseen data. The cross-validation process is used to fine-tune hyperparameters such as the number of estimators in Random Forest, the depth of decision trees in Bagging Classifier, and the hidden layer sizes in MLP. Once tuned, the models are trained on the entire training dataset. After training, the `evaluate_model_with_custom_threshold` function is applied.
+2. **Threshold Optimization**: The `evaluate_model_with_custom_threshold` function calculates precision, recall, and F1 scores across different decision thresholds. This function identifies the threshold that optimizes the F1 score while ensuring that minimum precision and recall requirements are met (e.g., precision ≥ 35% and recall ≥ 65%). This threshold optimization process helps to balance the trade-off between false positives and false negatives, which is particularly important in fraud detection where the cost of incorrect classifications can be significant.
+
+3. **Model Selection**: Once all models have been trained and thresholds optimized, the system evaluates each model based on the combination of precision, recall, and F1 score. Models such as Random Forest, Bagging Classifier, and Extra Trees are then compared to determine which one offers the best balance of these metrics. The system selects the model with the highest F1 score and best satisfies the constraints of precision and recall for deployment.
+
+| Model                     | Best Threshold | F1-Score (%) | Precision (%) | Recall (%) |
+|----------------------------|----------------|--------------|---------------|------------|
+| **Random Forest**           | 0.27           | 66.16        | 62.50         | 70.28      |
+| **Bagging Classifier**      | 0.39           | 72.39        | 75.38         | 69.64      |
+| **Extra Trees Classifier**  | 0.16           | 52.13        | 43.17         | 65.77      |
+
+The Bagging Classifier model achieves the highest F1 score of 72.39%, with a well-balanced precision of 75.38% and recall of 69.64%. As such, it was selected as the best-performing model for deployment in this case.
+
+4. **Model Saving**: After evaluation, the selected model is saved alongside its associated metadata, including the decision threshold, numeric transformer, target encoder, and key evaluation metrics. These components are essential for inference and system audits and are stored in the system's model artifacts directory. This structured format allows for easy retrieval and deployment of the model during inference, ensuring consistency and reproducibility of predictions.
+
+### Post-deployment Policies
+
+Once the fraud detection system is deployed, it is import to make sure that the model performs optimally in real-world settings, especially as fraud patterns may evolve over time. To address this, a detailed post-deployment monitoring and maintenance plan is necessary, along with fault mitigation strategies to minimize the impact of any issues that may arise during operation.
+
+#### Monitoring and Maintenance Plan
+
+1. **Performance Monitoring**:
+   - **Continuous Monitoring of Predictions**: The system logs each prediction made by the model, including the input data, the model version used, the probability score, the final prediction, and the timestamp of the prediction. This enables detailed auditing of the model’s performance and ensures traceability of individual decisions.
+   - **Model Metrics Tracking**: Key metrics such as precision, recall, F1 score, and decision threshold should be tracked over time. By comparing these metrics with the results observed during the model’s training and validation phase, we can detect any performance degradation early on.
+   - **Alerting System**: If the model’s precision or recall falls below pre-defined thresholds (e.g., precision below 35% or recall below 60%), automated alerts will notify administrators. This ensures that any significant drop in performance is flagged promptly, allowing for immediate investigation and remediation.
+
+2. **Scheduled Retraining**:
+   - **Model Retraining Frequency**: The model should be retrained on a regular basis to adapt to any changes in fraud patterns. A scheduled retraining process could occur monthly or quarterly, depending on the rate of change in transaction behavior and fraud types observed in the data.
+   - **Use of Updated Data**: Retraining should incorporate the latest transaction and fraud data. Any new fraud cases that were missed by the current model can be included in the updated training set to improve future detection accuracy.
+   - **Threshold Reevaluation**: Along with model retraining, the decision threshold should be reevaluated to ensure it continues to meet the precision and recall targets. The `evaluate_model_with_custom_threshold` function should be used during retraining to find the optimal threshold for the updated model.
+
+3. **Model Versioning and Rollbacks**:
+   - **Version Control**: Each model deployed will have a version number associated with it. This allows for accurate tracking of which model is in use at any given time and facilitates auditing and comparison across different versions.
+   - **Rollback Mechanism**: If a newly deployed model underperforms or introduces unexpected faults, the system will have the ability to roll back to a previous version. The ability to quickly switch between models ensures that the system can continue to operate with minimal downtime during troubleshooting.
+
+#### Fault Mitigation Strategies
+
+1. **Handling Prediction Failures**:
+   - **Fallback Mechanism**: In the event of a prediction failure (e.g., a corrupted input file or an issue with the inference pipeline), the system will return a default prediction of “legitimate” to ensure that operations can continue smoothly. These cases will be logged for further investigation.
+   - **Batch Processing Fault Tolerance**: During batch processing of transactions, if one or more transactions fail due to data corruption or processing errors, the system will skip the faulty records and continue processing the rest of the batch. The skipped transactions will be flagged for review and correction.
+   
+2. **Data Integrity Checks**:
+   - **Input Data Validation**: Before making predictions, the system will validate input data to ensure that required fields are present and formatted correctly. This prevents errors caused by missing or malformed data.
+   - **Outlier Detection**: Data points that deviate significantly from normal patterns (e.g., unusually large transactions or transactions with anomalous time intervals) will be flagged as potential data issues or as higher-risk transactions. This can help prevent incorrect predictions due to faulty or misleading data.
+
+3. **Infrastructure Monitoring**:
+   - **API Health Monitoring**: The Flask API handling predictions and model selection will be monitored for uptime and performance metrics (e.g., response time and error rates). Automated alerts will notify the team of any API downtime or performance bottlenecks.
+   - **Resource Utilization Tracking**: System resources (CPU, memory, disk usage) will be monitored to ensure that the Docker container hosting the API and other infrastructure components is operating within acceptable limits. Overload conditions or resource leaks will trigger automated scaling or rebooting, ensuring continuous system availability.
+
+4. **Incident Response and Troubleshooting**:
+   - **Error Logging and Root Cause Analysis**: All errors, whether related to prediction, data processing, or system failures, will be logged with detailed information to facilitate quick root cause analysis. This will help in diagnosing and fixing issues effectively, ensuring minimal disruption to the system’s operation.
+   - **User Notifications**: In cases where faults impact the prediction accuracy or availability of the system
+
