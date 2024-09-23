@@ -32,6 +32,7 @@ streamlit run streamlit_app.py
 
 ## Directory Structure:
 
+```graphql
 securebank/
 │
 ├── analysis/
@@ -66,3 +67,4 @@ securebank/
 ├── test.json                     # Test JSON file with single datapoint for prediction
 ├── 100_transactions.json         # Test JSON file 100 datapoints for predictions (50 fraud/50 non-fraud)
 └── .gitignore                    # Git ignore file
+```
