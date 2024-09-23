@@ -70,6 +70,8 @@ The fraud detection system is designed to meet the core requirements of SecureBa
 - **R3: The system should allow administrators to generate a new dataset for training from the available data sources.**
   - The system includes a data pipeline with modules for extracting, processing, and partitioning data. The **Raw Data Handler** extracts raw data from CSV, Parquet, and JSON files, while the **Dataset Designer** splits the data into training and test sets, ensuring no data leakage. Administrators can use the Streamlit interface to load raw files, process them, and generate new datasets from specific time ranges they are interseted in.
 
+  ![alt text](images/screenshot3.png)
+
 - **R4: The system should allow administrators to select from a catalog of pre-trained models.**
   - Administrators can use the Streamlit interface to select from a list of pre-trained models stored in the system’s model artifacts. This selection is facilitated by the `/list_models/` and `/select_model/` Flask API endpoints, which enable the selection of the model best suited for current fraud detection needs. The models are stored in a structured format, allowing for quick retrieval and deployment in predictions.
 
@@ -86,6 +88,8 @@ The Streamlit application acts as the user interface for fraud detection. It all
 - Input transaction data for fraud prediction or upload a JSON file with multiple transactions.
 - Submit predictions and receive immediate feedback on whether a transaction is legitimate or fraudulent.
 - View prediction history and model performance metrics.
+
+![alt text](images/screenshot1.png)
 
 #### 2. **Data Processing Pipelines**
 
@@ -243,6 +247,8 @@ Online metrics are collected when the system is deployed and handling live data.
    - **Prediction**: The binary fraud prediction (`0` or `1`).
    - **Probability**: The probability score associated with the fraud prediction.
    - **Prediction Time**: The timestamp of when the prediction was made.
+
+![alt text](images/screenshot2.png)
 
    This history is valuable for auditing purposes, allowing administrators to trace back any decision the system made, as well as to monitor model drift or changes in performance over time.
 
