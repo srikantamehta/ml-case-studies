@@ -28,3 +28,41 @@ python docker-setup.py
 streamlit run streamlit_app.py
 ```
 ### 5. A window should open up in your default browser with the streamlit app loaded. 
+
+
+## Directory Structure:
+
+securebank/
+│
+├── analysis/
+│   └── data_analysis.ipynb       # Jupyter notebook for data analysis
+│   └── model_performance.ipynb  # Jupyter notebook for model training
+│
+├── data_sources/
+│   ├── customer_release.csv      # Customer data source
+│   ├── fraud_release.json        # Fraud labels source
+│   └── transactions_release.parquet # Transaction data source
+│
+├── modules/
+│   ├── dataset_design.py         # Dataset design module
+│   ├── feature_extractor.py      # Feature extraction module
+│   ├── raw_data_handler.py       # Raw data handling module     
+│
+├── storage/
+│   └── models/
+│       └── artifacts/            # Folder containing saved models
+│           ├── bagging_model_1/  
+│           ├── extratrees_model_1/
+│           └── random_forest_model_1/
+│
+├── app.py                        # Streamlit app main file
+├── docker-compose.yml            # Docker Compose configuration
+├── docker-setup.py               # Script to run Docker setup
+├── Dockerfile                    # Dockerfile to build Flask API container
+├── pipeline.py                   # Flask API pipeline implementation
+├── ReadMe.md                     # Setup and instructions
+├── requirements.txt              # Python dependencies
+├── System_Report.md              # Project system report
+├── test.json                     # Test JSON file with single datapoint for prediction
+├── 100_transactions.json         # Test JSON file 100 datapoints for predictions (50 fraud/50 non-fraud)
+└── .gitignore                    # Git ignore file

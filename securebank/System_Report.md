@@ -1,5 +1,7 @@
 # SecureBank Fraud Detection System Report
 
+For details on how to run the system please refer to `securebank/ReadMe.md`.
+
 ## System Design
 
 ### High Level System Diagram

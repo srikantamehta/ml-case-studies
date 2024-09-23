@@ -115,7 +115,7 @@ class Pipeline:
             self.history.append({
                 "input": data_point, 
                 "model": self.version,
-                "prediction": bool(predictions[i]),  # Convert each prediction to a boolean
+                "prediction": bool(predictions[i]), 
                 "probability": proba_predictions[i],
                 "prediction_time": prediction_time
             })
