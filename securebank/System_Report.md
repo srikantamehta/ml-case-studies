@@ -75,6 +75,8 @@ The fraud detection system is designed to meet the core requirements of SecureBa
 - **R4: The system should allow administrators to select from a catalog of pre-trained models.**
   - Administrators can use the Streamlit interface to select from a list of pre-trained models stored in the system’s model artifacts. This selection is facilitated by the `/list_models/` and `/select_model/` Flask API endpoints, which enable the selection of the model best suited for current fraud detection needs. The models are stored in a structured format, allowing for quick retrieval and deployment in predictions.
 
+  ![alt text](images/screenshot4.png)
+
 - **R5: The system should allow administrators to audit the system's performance.**
   - The system allows for performance auditing by providing metrics such as precision, recall, and F1 score for each model. These metrics are displayed in the Streamlit interface when an administrator selects the option to view model stats. The `/model_stats/` Flask API endpoint provides this information, ensuring that administrators can regularly check how well the system is performing and decide if retraining or model updates are necessary. The system also allows for viewing of historical prediction records through the `/get_history/` endpoint. This returns all predictions made as well as the model used for the prediction and the day and time the prediction was made. This allows for further analysis of system performance post prediction.
 
