@@ -1,5 +1,4 @@
 import joblib
-from datetime import datetime
 import os
 import pandas as pd
 from modules.feature_extractor import Feature_Extractor
@@ -19,30 +18,6 @@ class Pipeline:
 
         self.select_model(version)
 
-    def list_models(self, model_dir: str=None):
-        """
-        Lists all available models in the specified directory or in the default storage/models/artifacts/ directory.
-        
-        Args:
-            model_dir (str): Optional. The directory to look for models. If not provided, it defaults to storage/models/artifacts/.
-        
-        Returns:
-            List[str]: A list of available model versions.
-        """
-        base_model_dir = os.path.abspath('storage/models/artifacts/')
-        
-        # Check if the directory exists
-        if not os.path.exists(base_model_dir):
-            raise FileNotFoundError(f"Model directory not found: {base_model_dir}")
-        
-        # List directories or model versions
-        model_versions = [d for d in os.listdir(base_model_dir) if os.path.isdir(os.path.join(base_model_dir, d))]
-        
-        if not model_versions:
-            raise FileNotFoundError("No models available in the model directory.")
-        
-        return model_versions
-
     def select_model(self, version: str):
         """
         Loads a model, scaler, and target encoder from a catalog of pre-trained models in storage/models/artifacts/.
@@ -55,25 +30,9 @@ class Pipeline:
             self.model = model_package['model']
             self.scaler = model_package['numeric_transformer']
             self.target_encoder = model_package['target_encoder']
-            self.threshold = model_package['threshold']
-            self.model_stats = model_package['model_stats']
-
-            if not self.model:
-                raise ValueError(f"Model not found in {model_path}")
-            if not self.scaler:
-                raise ValueError(f"Numeric transformer not found in {model_path}")
-            if not self.target_encoder:
-                raise ValueError(f"Target encoder not found in {model_path}")
-            if not self.threshold:
-                raise ValueError(f"Model Threshold value not found in {model_path}")
-            if not self.model_stats:
-                raise ValueError(f"Model Stats not found in {model_path}")
-        
             print(f"Model, scaler, and target encoder loaded from {model_path}")
         else:
             raise FileNotFoundError(f"Model file not found in {model_path}")
-        
-        self.version = version
         
     def predict(self, input_data: dict):
         """
@@ -101,23 +60,14 @@ class Pipeline:
         # Combine numeric and categorical features
         X_input = pd.concat([X_numeric, X_encoded], axis=1)
         
-        # Predict probablilties using the model and threshold
-        proba_predictions = self.model.predict_proba(X_input)[:,1]
-
-        # Generate predicted classifications
-        predictions = proba_predictions >= self.threshold
-
-        # Obtain Prediction time
-        prediction_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # Predict using the model
+        predictions = self.model.predict(X_input)
 
         # Store the predictions in history for each data point
         for i, data_point in enumerate(input_data):
             self.history.append({
                 "input": data_point, 
-                "model": self.version,
-                "prediction": bool(predictions[i]),  # Convert each prediction to a boolean
-                "probability": proba_predictions[i],
-                "prediction_time": prediction_time
+                "prediction": bool(predictions[i])  # Convert each prediction to a boolean
             })
 
         # Return a single prediction if one data point was passed, else return a list
@@ -131,9 +81,3 @@ class Pipeline:
             history (List[Dict]): A list containing the input data and corresponding predictions.
         """
         return self.history
-    
-    def get_model_stats(self):
-        """
-        Returns the model stats from training.
-        """
-        return self.model_stats

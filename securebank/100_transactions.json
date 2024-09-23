@@ -1,0 +1,1002 @@
+[
+    {
+        "trans_date_trans_time": "2020-08-24 23:36:22",
+        "cc_num": "4658490815480264",
+        "unix_time": "1377387382.0",
+        "merchant": "fraud_heller plc",
+        "category": "health_fitness",
+        "amt": "21.37",
+        "merch_lat": "40.297416",
+        "merch_long": "-78.980374"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 00:13:33",
+        "cc_num": "4658490815480264",
+        "unix_time": "1377389613.0",
+        "merchant": "fraud_dubuque llc",
+        "category": "grocery_pos",
+        "amt": "339.6",
+        "merch_lat": "40.916675",
+        "merch_long": "-79.04914000000001"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 00:21:08",
+        "cc_num": "4658490815480264",
+        "unix_time": "1377390068.0",
+        "merchant": "fraud_gutmann ltd",
+        "category": "grocery_net",
+        "amt": "14.31",
+        "merch_lat": "39.209272",
+        "merch_long": "-79.453391"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 00:23:25",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377390205.0",
+        "merchant": "unknown",
+        "category": "shopping_net",
+        "amt": "1028.41",
+        "merch_lat": "39.481471",
+        "merch_long": "-80.710311"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 00:47:33",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377391653.0",
+        "merchant": "fraud_miller-hauck",
+        "category": "grocery_pos",
+        "amt": "336.64",
+        "merch_lat": "40.259102",
+        "merch_long": "-80.359262"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 01:14:58",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1598318098.0",
+        "merchant": "fraud_bogisich-homenick",
+        "category": "misc_net",
+        "amt": "764.01",
+        "merch_lat": "40.004636",
+        "merch_long": "-79.92125300000001"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 01:17:27",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377393447.0",
+        "merchant": "fraud_huel, hammes and witting",
+        "category": "grocery_pos",
+        "amt": "315.83",
+        "merch_lat": "40.298678",
+        "merch_long": "-89.729564"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 01:22:24",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377393744.0",
+        "merchant": "fraud_casper, hand and zulauf",
+        "category": "grocery_pos",
+        "amt": "289.38",
+        "merch_lat": "40.600096",
+        "merch_long": "-89.576626"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 01:28:04",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377394084.0",
+        "merchant": "fraud_eichmann-russel",
+        "category": "misc_pos",
+        "amt": "735.07",
+        "merch_lat": "39.260691",
+        "merch_long": "-79.368978"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 02:30:00",
+        "cc_num": "4471568287204",
+        "unix_time": "1377397800.0",
+        "merchant": "fraud_heller, gutmann and zieme",
+        "category": "grocery_pos",
+        "amt": "304.82",
+        "merch_lat": "37.1698",
+        "merch_long": "-78.984359"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 02:47:51",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1598323671.0",
+        "merchant": "fraud_mcglynn-jaskolski",
+        "category": "misc_pos",
+        "amt": "746.6",
+        "merch_lat": "39.707859",
+        "merch_long": "-80.584417"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 16:34:51",
+        "cc_num": "4658490815480264",
+        "unix_time": "1377448491.0",
+        "merchant": "fraud_hills-witting",
+        "category": "shopping_net",
+        "amt": "867.23",
+        "merch_lat": "40.864531",
+        "merch_long": "-79.657352"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:02:35",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377468155.0",
+        "merchant": "fraud_jerde-hermann",
+        "category": "travel",
+        "amt": "10.71",
+        "merch_lat": "39.872061",
+        "merch_long": "-88.603305"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:20:39",
+        "cc_num": "4471568287204",
+        "unix_time": "1377469239.0",
+        "merchant": "fraud_kautzer and sons",
+        "category": "personal_care",
+        "amt": "20.93",
+        "merch_lat": "37.108707",
+        "merch_long": "-78.649413"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:26:37",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377469597.0",
+        "merchant": "fraud_torphy-goyette",
+        "category": "shopping_pos",
+        "amt": "938.71",
+        "merch_lat": "41.188591",
+        "merch_long": "-88.604605"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:36:22",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377470182.0",
+        "merchant": "fraud_donnelly plc",
+        "category": "misc_net",
+        "amt": "776.33",
+        "merch_lat": "41.168566",
+        "merch_long": "-88.656388"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:43:14",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377470594.0",
+        "merchant": "fraud_koepp-witting",
+        "category": "grocery_pos",
+        "amt": "277.07",
+        "merch_lat": "40.673531",
+        "merch_long": "-90.055675"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 22:56:20",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377471380.0",
+        "merchant": "unknown",
+        "category": "food_dining",
+        "amt": "113.15",
+        "merch_lat": "40.389661",
+        "merch_long": "-79.69586899999999"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 23:11:19",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1598397079.0",
+        "merchant": "fraud_kassulke inc",
+        "category": "entertainment",
+        "amt": "474.73",
+        "merch_lat": "40.777232",
+        "merch_long": "-79.24407"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 23:11:24",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377472284.0",
+        "merchant": "fraud_runte-mohr",
+        "category": "food_dining",
+        "amt": "108.56",
+        "merch_lat": "39.939243",
+        "merch_long": "-80.092709"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 23:12:47",
+        "cc_num": "4658490815480264",
+        "unix_time": "1377472367.0",
+        "merchant": "fraud_cole plc",
+        "category": "grocery_pos",
+        "amt": "314.02",
+        "merch_lat": "40.837081",
+        "merch_long": "-80.281161"
+    },
+    {
+        "trans_date_trans_time": "2020-08-25 23:23:17",
+        "cc_num": "4471568287204",
+        "unix_time": "1377472997.0",
+        "merchant": "fraud_cormier, stracke and thiel",
+        "category": "entertainment",
+        "amt": "347.05",
+        "merch_lat": "36.853903",
+        "merch_long": "-79.248207"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 00:50:12",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377478212.0",
+        "merchant": "fraud_kiehn-emmerich",
+        "category": "grocery_pos",
+        "amt": "312.74",
+        "merch_lat": "44.886755",
+        "merch_long": "-122.3418"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 01:14:56",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377479696.0",
+        "merchant": "fraud_murray-smitham",
+        "category": "grocery_pos",
+        "amt": "304.81",
+        "merch_lat": "41.310366",
+        "merch_long": "-89.449384"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 01:24:26",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377480266.0",
+        "merchant": "fraud_barrows plc",
+        "category": "shopping_pos",
+        "amt": "754.99",
+        "merch_lat": "40.535815",
+        "merch_long": "-80.621781"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 02:10:44",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377483044.0",
+        "merchant": "unknown",
+        "category": "unknown",
+        "amt": "834.55",
+        "merch_lat": "38.907559",
+        "merch_long": "-79.095668"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 07:13:37",
+        "cc_num": "583699482621",
+        "unix_time": "1377501217.0",
+        "merchant": "fraud_miller-hauck",
+        "category": "grocery_pos",
+        "amt": "305.1",
+        "merch_lat": "44.992904",
+        "merch_long": "-89.951075"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 07:16:58",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377501418.0",
+        "merchant": "fraud_williamson llc",
+        "category": "misc_pos",
+        "amt": "662.94",
+        "merch_lat": "40.178925",
+        "merch_long": "-80.39969"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 11:48:19",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377517699.0",
+        "merchant": "fraud_strosin-cruickshank",
+        "category": "grocery_pos",
+        "amt": "305.28",
+        "merch_lat": "45.14278",
+        "merch_long": "-122.940471"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 12:21:40",
+        "cc_num": "583699482621",
+        "unix_time": "1377519700.0",
+        "merchant": "fraud_block-parisian",
+        "category": "misc_net",
+        "amt": "781.31",
+        "merch_lat": "44.021869",
+        "merch_long": "-89.60735799999999"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 13:17:40",
+        "cc_num": "583699482621",
+        "unix_time": "1377523060.0",
+        "merchant": "fraud_langworth, boehm and gulgowski",
+        "category": "shopping_net",
+        "amt": "1104.35",
+        "merch_lat": "44.78665",
+        "merch_long": "-89.695755"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 22:16:40",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377555400.0",
+        "merchant": "fraud_pacocha-bauch",
+        "category": "shopping_pos",
+        "amt": "935.55",
+        "merch_lat": "41.311964",
+        "merch_long": "-89.925449"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 22:28:18",
+        "cc_num": "583699482621",
+        "unix_time": "1377556098.0",
+        "merchant": "fraud_daugherty, pouros and beahan",
+        "category": "shopping_pos",
+        "amt": "984.45",
+        "merch_lat": "44.561139",
+        "merch_long": "-89.569509"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 22:52:30",
+        "cc_num": "4119762878330989",
+        "unix_time": "1377557550.0",
+        "merchant": "fraud_kris-weimann",
+        "category": "misc_net",
+        "amt": "864.74",
+        "merch_lat": "40.924794",
+        "merch_long": "-89.051076"
+    },
+    {
+        "trans_date_trans_time": "2020-08-26 23:38:42",
+        "cc_num": "4512828414983801773",
+        "unix_time": "1377560322.0",
+        "merchant": "fraud_dare, fritsch and zboncak",
+        "category": "health_fitness",
+        "amt": "18.42",
+        "merch_lat": "38.950434",
+        "merch_long": "-80.257724"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 00:50:04",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377564604.0",
+        "merchant": "fraud_raynor, reinger and hagenes",
+        "category": "gas_transport",
+        "amt": "11.0",
+        "merch_lat": "45.479046",
+        "merch_long": "-122.89965"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 02:45:32",
+        "cc_num": "3563837241599446",
+        "unix_time": "1598496332.0",
+        "merchant": "fraud_auer-mosciski",
+        "category": "grocery_pos",
+        "amt": "306.41",
+        "merch_lat": "45.265593",
+        "merch_long": "-122.045844"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 02:52:46",
+        "cc_num": "6011975266774121",
+        "unix_time": "1377571966.0",
+        "merchant": "unknown",
+        "category": "gas_transport",
+        "amt": "8.91",
+        "merch_lat": "38.816774",
+        "merch_long": "-77.148697"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 03:01:49",
+        "cc_num": "583699482621",
+        "unix_time": "1598497309.0",
+        "merchant": "fraud_strosin-cruickshank",
+        "category": "grocery_pos",
+        "amt": "283.33",
+        "merch_lat": "45.019889",
+        "merch_long": "-89.171339"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 03:45:17",
+        "cc_num": "583699482621",
+        "unix_time": "1377575117.0",
+        "merchant": "fraud_kilback llc",
+        "category": "grocery_pos",
+        "amt": "278.02",
+        "merch_lat": "43.605674",
+        "merch_long": "-89.758216"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 11:43:19",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377603799.0",
+        "merchant": "fraud_hudson-ratke",
+        "category": "grocery_pos",
+        "amt": "286.88",
+        "merch_lat": "46.102963",
+        "merch_long": "-123.3777"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 12:09:29",
+        "cc_num": "3563837241599446",
+        "unix_time": "1598530169.0",
+        "merchant": "fraud_heathcote, yost and kertzmann",
+        "category": "shopping_net",
+        "amt": "949.25",
+        "merch_lat": "44.988721000000005",
+        "merch_long": "-122.237063"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 21:07:14",
+        "cc_num": "6011975266774121",
+        "unix_time": "1377637634.0",
+        "merchant": "unknown",
+        "category": "grocery_pos",
+        "amt": "312.19",
+        "merch_lat": "38.659619",
+        "merch_long": "-76.42160600000001"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 22:03:12",
+        "cc_num": "583699482621",
+        "unix_time": "1598565792.0",
+        "merchant": "fraud_labadie, treutel and bode",
+        "category": "shopping_net",
+        "amt": "892.48",
+        "merch_lat": "43.49546",
+        "merch_long": "-88.220483"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 22:16:09",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377641769.0",
+        "merchant": "fraud_moore, dibbert and koepp",
+        "category": "misc_net",
+        "amt": "656.66",
+        "merch_lat": "45.901061",
+        "merch_long": "-123.319642"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 22:48:50",
+        "cc_num": "6011104316292105",
+        "unix_time": "1377643730.0",
+        "merchant": "fraud_gottlieb-hansen",
+        "category": "personal_care",
+        "amt": "20.91",
+        "merch_lat": "36.654786",
+        "merch_long": "-77.96393499999999"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 23:10:16",
+        "cc_num": "3563837241599446",
+        "unix_time": "1377645016.0",
+        "merchant": "fraud_ferry, lynch and kautzer",
+        "category": "misc_net",
+        "amt": "892.22",
+        "merch_lat": "45.262440000000005",
+        "merch_long": "-122.493458"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 23:12:51",
+        "cc_num": "6011975266774121",
+        "unix_time": "1377645171.0",
+        "merchant": "fraud_pfeffer and sons",
+        "category": "shopping_pos",
+        "amt": "938.12",
+        "merch_lat": "39.571308",
+        "merch_long": "-75.749927"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 23:14:06",
+        "cc_num": "583699482621",
+        "unix_time": "1377645246.0",
+        "merchant": "fraud_beier-hyatt",
+        "category": "shopping_pos",
+        "amt": "1013.3",
+        "merch_lat": "44.905339",
+        "merch_long": "-89.664664"
+    },
+    {
+        "trans_date_trans_time": "2020-08-27 23:21:14",
+        "cc_num": "6011104316292105",
+        "unix_time": "1377645674.0",
+        "merchant": "fraud_beier and sons",
+        "category": "home",
+        "amt": "246.3",
+        "merch_lat": "37.377942",
+        "merch_long": "-79.077207"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:32:46",
+        "cc_num": "4681699462969",
+        "unix_time": "1377387166.0",
+        "merchant": "fraud_lowe, dietrich and erdman",
+        "category": "kids_pets",
+        "amt": "22.84",
+        "merch_lat": "36.11551",
+        "merch_long": "-86.938393"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:32:47",
+        "cc_num": "30238755902988",
+        "unix_time": "1377387167.0",
+        "merchant": "fraud_champlin, rolfson and connelly",
+        "category": "travel",
+        "amt": "8.97",
+        "merch_lat": "30.784199",
+        "merch_long": "-96.775399"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:33:21",
+        "cc_num": "6011652924285713",
+        "unix_time": "1598312001.0",
+        "merchant": "fraud_renner ltd",
+        "category": "home",
+        "amt": "132.77",
+        "merch_lat": "37.502627",
+        "merch_long": "-91.834708"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:33:24",
+        "cc_num": "630425673344",
+        "unix_time": "1377387204.0",
+        "merchant": "fraud_weimann-lockman",
+        "category": "kids_pets",
+        "amt": "5.7",
+        "merch_lat": "38.715788",
+        "merch_long": "-80.83103"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:34:26",
+        "cc_num": "4502539526809429801",
+        "unix_time": "1598312066.0",
+        "merchant": "fraud_schoen, nienow and bauch",
+        "category": "personal_care",
+        "amt": "2.61",
+        "merch_lat": "35.826276",
+        "merch_long": "-90.663726"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:34:47",
+        "cc_num": "4247921790666",
+        "unix_time": "1377387287.0",
+        "merchant": "unknown",
+        "category": "unknown",
+        "amt": "14.2",
+        "merch_lat": "39.851013",
+        "merch_long": "-82.537428"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:34:59",
+        "cc_num": "30501624614310",
+        "unix_time": "1377387299.0",
+        "merchant": "fraud_predovic inc",
+        "category": "shopping_net",
+        "amt": "3.68",
+        "merch_lat": "33.540762",
+        "merch_long": "-80.754976"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:35:58",
+        "cc_num": "4128730454058057622",
+        "unix_time": "1377387358.0",
+        "merchant": "fraud_gaylord-powlowski",
+        "category": "home",
+        "amt": "64.68",
+        "merch_lat": "32.340965000000004",
+        "merch_long": "-95.232742"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:36:46",
+        "cc_num": "4158008602445",
+        "unix_time": "1377387406.0",
+        "merchant": "fraud_kemmer-buckridge",
+        "category": "misc_pos",
+        "amt": "6.28",
+        "merch_lat": "45.083931",
+        "merch_long": "-93.981686"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:36:56",
+        "cc_num": "36485887555770",
+        "unix_time": "1377387416.0",
+        "merchant": "fraud_johns-hoeger",
+        "category": "entertainment",
+        "amt": "88.37",
+        "merch_lat": "40.771919",
+        "merch_long": "-82.679511"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:37:33",
+        "cc_num": "36722699017270",
+        "unix_time": "1377387453.0",
+        "merchant": "unknown",
+        "category": "home",
+        "amt": "61.67",
+        "merch_lat": "34.101656",
+        "merch_long": "-111.476386"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:38:15",
+        "cc_num": "36485887555770",
+        "unix_time": "1377387495.0",
+        "merchant": "fraud_corwin-gorczany",
+        "category": "misc_net",
+        "amt": "242.14",
+        "merch_lat": "41.239853",
+        "merch_long": "-83.473095"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:38:29",
+        "cc_num": "38199021865320",
+        "unix_time": "1377387509.0",
+        "merchant": "fraud_witting, beer and ernser",
+        "category": "home",
+        "amt": "79.02",
+        "merch_lat": "43.930102000000005",
+        "merch_long": "-71.424711"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:39:07",
+        "cc_num": "581686439828",
+        "unix_time": "1377387547.0",
+        "merchant": "fraud_monahan, bogisich and ledner",
+        "category": "misc_pos",
+        "amt": "5.68",
+        "merch_lat": "41.351905",
+        "merch_long": "-80.300117"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:39:21",
+        "cc_num": "4792627764422477317",
+        "unix_time": "1377387561.0",
+        "merchant": "fraud_schiller ltd",
+        "category": "personal_care",
+        "amt": "11.84",
+        "merch_lat": "38.011525",
+        "merch_long": "-95.153394"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:39:38",
+        "cc_num": "3506042666828517",
+        "unix_time": "1377387578.0",
+        "merchant": "fraud_dickinson ltd",
+        "category": "personal_care",
+        "amt": "109.41",
+        "merch_lat": "38.455979",
+        "merch_long": "-80.71211600000001"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:39:41",
+        "cc_num": "4482427013979020",
+        "unix_time": "1377387581.0",
+        "merchant": "fraud_zulauf llc",
+        "category": "personal_care",
+        "amt": "54.22",
+        "merch_lat": "38.531323",
+        "merch_long": "-83.08182099999999"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:41:16",
+        "cc_num": "375767678113375",
+        "unix_time": "1377387676.0",
+        "merchant": "fraud_quitzon-goyette",
+        "category": "home",
+        "amt": "29.99",
+        "merch_lat": "39.532582",
+        "merch_long": "-78.559086"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:42:14",
+        "cc_num": "3547560454237873",
+        "unix_time": "1377387734.0",
+        "merchant": "fraud_block-hauck",
+        "category": "travel",
+        "amt": "50.72",
+        "merch_lat": "44.155589",
+        "merch_long": "-86.933128"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:42:19",
+        "cc_num": "3538520143479972",
+        "unix_time": "1377387739.0",
+        "merchant": "fraud_carroll plc",
+        "category": "health_fitness",
+        "amt": "74.79",
+        "merch_lat": "42.145536",
+        "merch_long": "-83.38999100000001"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:43:05",
+        "cc_num": "3595192916105588",
+        "unix_time": "1377387785.0",
+        "merchant": "fraud_mckenzie-huels",
+        "category": "food_dining",
+        "amt": "1.73",
+        "merch_lat": "35.652132",
+        "merch_long": "-78.396147"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:43:08",
+        "cc_num": "347073228412010",
+        "unix_time": "1377387788.0",
+        "merchant": "fraud_windler, goodwin and kovacek",
+        "category": "home",
+        "amt": "82.25",
+        "merch_lat": "44.851169",
+        "merch_long": "-103.531742"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:43:32",
+        "cc_num": "6011860238257910",
+        "unix_time": "1377387812.0",
+        "merchant": "fraud_nienow, barrows and romaguera",
+        "category": "personal_care",
+        "amt": "8.37",
+        "merch_lat": "36.358219",
+        "merch_long": "-98.604261"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:43:39",
+        "cc_num": "4708992452821239",
+        "unix_time": "1377387819.0",
+        "merchant": "fraud_bednar inc",
+        "category": "travel",
+        "amt": "4.47",
+        "merch_lat": "36.766419",
+        "merch_long": "-91.107015"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:43:40",
+        "cc_num": "213163860545705",
+        "unix_time": "1377387820.0",
+        "merchant": "fraud_prosacco, kreiger and kovacek",
+        "category": "home",
+        "amt": "79.37",
+        "merch_lat": "32.606499",
+        "merch_long": "-83.069229"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:44:08",
+        "cc_num": "4742883543039288059",
+        "unix_time": "1377387848.0",
+        "merchant": "fraud_quitzon, green and bashirian",
+        "category": "shopping_pos",
+        "amt": "6.41",
+        "merch_lat": "19.046113",
+        "merch_long": "-155.036936"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:44:11",
+        "cc_num": "4476840372112",
+        "unix_time": "1377387851.0",
+        "merchant": "fraud_rau-robel",
+        "category": "kids_pets",
+        "amt": "27.15",
+        "merch_lat": "33.739386",
+        "merch_long": "-86.417027"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:44:11",
+        "cc_num": "4990494243023",
+        "unix_time": "1377387851.0",
+        "merchant": "fraud_kautzer and sons",
+        "category": "personal_care",
+        "amt": "114.65",
+        "merch_lat": "40.171493",
+        "merch_long": "-78.379021"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:44:14",
+        "cc_num": "2254917871818484",
+        "unix_time": "1377387854.0",
+        "merchant": "fraud_hermiston, pacocha and smith",
+        "category": "health_fitness",
+        "amt": "5.32",
+        "merch_lat": "37.76559",
+        "merch_long": "-77.060778"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:44:32",
+        "cc_num": "3595111028444131",
+        "unix_time": "1377387872.0",
+        "merchant": "fraud_pouros, walker and spencer",
+        "category": "kids_pets",
+        "amt": "26.87",
+        "merch_lat": "36.335504",
+        "merch_long": "-91.195599"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:45:13",
+        "cc_num": "4613314721966",
+        "unix_time": "1377387913.0",
+        "merchant": "fraud_brown-greenholt",
+        "category": "entertainment",
+        "amt": "66.08",
+        "merch_lat": "35.497246999999994",
+        "merch_long": "-82.598809"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:45:55",
+        "cc_num": "213174467670432",
+        "unix_time": "1377387955.0",
+        "merchant": "fraud_lowe, dietrich and erdman",
+        "category": "kids_pets",
+        "amt": "140.53",
+        "merch_lat": "39.363059",
+        "merch_long": "-75.821861"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:45:57",
+        "cc_num": "6011724471098086",
+        "unix_time": "1377387957.0",
+        "merchant": "fraud_kozey-kuhlman",
+        "category": "personal_care",
+        "amt": "172.35",
+        "merch_lat": "46.24399",
+        "merch_long": "-119.086744"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:46:08",
+        "cc_num": "343819048608995",
+        "unix_time": "1377387968.0",
+        "merchant": "fraud_corwin-romaguera",
+        "category": "travel",
+        "amt": "8.33",
+        "merch_lat": "41.383449",
+        "merch_long": "-94.050129"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:46:25",
+        "cc_num": "4378993458389626",
+        "unix_time": "1377387985.0",
+        "merchant": "unknown",
+        "category": "entertainment",
+        "amt": "2.3",
+        "merch_lat": "44.885659",
+        "merch_long": "-71.409263"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:46:38",
+        "cc_num": "3597926034019603",
+        "unix_time": "1377387998.0",
+        "merchant": "unknown",
+        "category": "personal_care",
+        "amt": "212.16",
+        "merch_lat": "35.950838",
+        "merch_long": "-89.979703"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:46:43",
+        "cc_num": "4933461930348832",
+        "unix_time": "1377388003.0",
+        "merchant": "fraud_bechtelar-rippin",
+        "category": "food_dining",
+        "amt": "50.39",
+        "merch_lat": "44.66971",
+        "merch_long": "-92.669154"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:46:53",
+        "cc_num": "3512365128314616",
+        "unix_time": "1377388013.0",
+        "merchant": "fraud_kihn-fritsch",
+        "category": "food_dining",
+        "amt": "46.42",
+        "merch_lat": "37.568278",
+        "merch_long": "-90.272767"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:47:25",
+        "cc_num": "4191109180926792",
+        "unix_time": "1377388045.0",
+        "merchant": "fraud_lesch ltd",
+        "category": "shopping_pos",
+        "amt": "60.83",
+        "merch_lat": "38.785238",
+        "merch_long": "-82.995672"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:47:30",
+        "cc_num": "4497913965512794052",
+        "unix_time": "1377388050.0",
+        "merchant": "fraud_schroeder group",
+        "category": "health_fitness",
+        "amt": "1.99",
+        "merch_lat": "35.46671",
+        "merch_long": "-79.735787"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:47:45",
+        "cc_num": "630423337322",
+        "unix_time": "1377388065.0",
+        "merchant": "fraud_wiza llc",
+        "category": "misc_pos",
+        "amt": "8.47",
+        "merch_lat": "49.2871",
+        "merch_long": "-117.873915"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:48:42",
+        "cc_num": "4424338559877976",
+        "unix_time": "1377388122.0",
+        "merchant": "fraud_ledner, hartmann and feest",
+        "category": "health_fitness",
+        "amt": "28.66",
+        "merch_lat": "39.817133",
+        "merch_long": "-82.997763"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:48:54",
+        "cc_num": "4587657402165341815",
+        "unix_time": "1377388134.0",
+        "merchant": "fraud_bode-schuster",
+        "category": "kids_pets",
+        "amt": "52.18",
+        "merch_lat": "40.544228",
+        "merch_long": "-87.56781"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:48:58",
+        "cc_num": "370818583810103",
+        "unix_time": "1598312938.0",
+        "merchant": "fraud_wilkinson plc",
+        "category": "kids_pets",
+        "amt": "24.18",
+        "merch_lat": "38.938582",
+        "merch_long": "-78.225571"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:49:25",
+        "cc_num": "6592861994408652",
+        "unix_time": "1377388165.0",
+        "merchant": "fraud_wuckert, wintheiser and friesen",
+        "category": "home",
+        "amt": "17.86",
+        "merch_lat": "41.836884000000005",
+        "merch_long": "-79.395025"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:49:27",
+        "cc_num": "4239436242473",
+        "unix_time": "1377388167.0",
+        "merchant": "fraud_schmeler inc",
+        "category": "misc_pos",
+        "amt": "2.55",
+        "merch_lat": "38.1714",
+        "merch_long": "-76.209231"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:49:37",
+        "cc_num": "371009169330125",
+        "unix_time": "1377388177.0",
+        "merchant": "unknown",
+        "category": "kids_pets",
+        "amt": "1.23",
+        "merch_lat": "31.720929",
+        "merch_long": "-84.283355"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:49:56",
+        "cc_num": "3518669219150142",
+        "unix_time": "1377388196.0",
+        "merchant": "fraud_leannon-ward",
+        "category": "food_dining",
+        "amt": "4.43",
+        "merch_lat": "39.467936",
+        "merch_long": "-84.020033"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:50:15",
+        "cc_num": "675945690716",
+        "unix_time": "1377388215.0",
+        "merchant": "fraud_wuckert, wintheiser and friesen",
+        "category": "home",
+        "amt": "64.3",
+        "merch_lat": "40.625949",
+        "merch_long": "-80.022615"
+    },
+    {
+        "trans_date_trans_time": "2020-08-24 23:50:17",
+        "cc_num": "38580485618059",
+        "unix_time": "1377388217.0",
+        "merchant": "fraud_wuckert-goldner",
+        "category": "home",
+        "amt": "10.67",
+        "merch_lat": "49.324669",
+        "merch_long": "-102.922333"
+    }
+]

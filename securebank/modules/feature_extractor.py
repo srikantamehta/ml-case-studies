@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, TargetEncoder
+
 from sklearn.pipeline import Pipeline
 
 
@@ -51,7 +52,9 @@ class Feature_Extractor:
                 self._add_time_features(test_dataset)
 
             # Scaling the numerical features
-            numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
+            numeric_transformer = Pipeline(steps=[
+                                            ('scaler', StandardScaler())])
+            
             X_train_numeric = numeric_transformer.fit_transform(training_dataset[self.numeric_features])
             X_test_numeric = numeric_transformer.transform(test_dataset[self.numeric_features]) if test_dataset is not None else None
 
@@ -127,4 +130,3 @@ class Feature_Extractor:
 
         # Return the dataset description
         return dataset_description
-

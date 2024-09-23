@@ -20,10 +20,19 @@ class Raw_Data_Handler:
         (CSV, Parquet, JSON).
         """
         # Create dataframes
-        self.customer_information = pd.read_csv(customer_information_filename)
-        self.fraud_information = pd.read_json(fraud_information_filename, typ='series').reset_index()
-        self.transaction_information = pd.read_parquet(transaction_filename).reset_index()
-
+        try:
+            self.customer_information = pd.read_csv(customer_information_filename)
+        except FileNotFoundError:
+            print(f"Error: {customer_information_filename} not found.")
+        try:
+            self.fraud_information = pd.read_json(fraud_information_filename, typ='series').reset_index()
+        except FileNotFoundError:
+            print(f"Error: {fraud_information_filename} not found.")
+        try:
+            self.transaction_information = pd.read_parquet(transaction_filename).reset_index()
+        except FileNotFoundError:
+            print(f"Error: {transaction_filename} not found.")
+        
         return self.customer_information, self.transaction_information, self.fraud_information
 
     def transform(self, customer_information, transaction_information, fraud_information):
