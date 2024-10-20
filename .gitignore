@@ -35,6 +35,7 @@ MANIFEST
 test_*
 storage/
 resources/
+simclr_resources/
 
 
 # PyInstaller
