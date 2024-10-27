@@ -1,0 +1,4 @@
+simclr_resources/
+notebooks/
+*.pyc
+__pycache__/

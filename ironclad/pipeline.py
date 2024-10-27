@@ -89,17 +89,17 @@ class Pipeline:
         return metadata_results
 
 
-if __name__ == "__main__":
-    pipeline = Pipeline()
+# if __name__ == "__main__":
+#     pipeline = Pipeline()
 
-    # Precompute embeddings for the gallery
-    gallery_dir = "ironclad/storage/multi_image_gallery"
-    pipeline._Pipeline__precompute(gallery_dir)
+#     # Precompute embeddings for the gallery
+#     gallery_dir = "ironclad/storage/multi_image_gallery"
+#     pipeline._Pipeline__precompute(gallery_dir)
     
-    # Save the computed embeddings
-    pipeline._Pipeline__save_embeddings()
+#     # Save the computed embeddings
+#     pipeline._Pipeline__save_embeddings()
 
-    # # Search for the k-nearest neighbors of a probe image
-    # probe_image = "ironclad/simclr_resources/probe/Will_Smith/Will_Smith_0002.jpg"
-    # results = pipeline.search_gallery(probe_image, k=5, metric='euclidean')
-    # print(results)
+#     # # Search for the k-nearest neighbors of a probe image
+#     # probe_image = "ironclad/simclr_resources/probe/Will_Smith/Will_Smith_0002.jpg"
+#     # results = pipeline.search_gallery(probe_image, k=5, metric='euclidean')
+#     # print(results)

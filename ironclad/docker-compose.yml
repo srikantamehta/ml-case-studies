@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ironclad-visual-search:
+    build: .
+    ports:
+      - "5001:5000" 
+    volumes:
+      - ./storage:/app/ironclad/storage 
+    environment:
+      - PYTHONUNBUFFERED=1  

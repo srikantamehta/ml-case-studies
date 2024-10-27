@@ -1,5 +1,6 @@
 torch
 torchvision
 facenet-pytorch
-PIL
+pillow
 faiss-cpu
+Flask
